@@ -14,7 +14,11 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Map longPress={handleLongPress}/>
-      <Modal />
+      <Modal 
+        showModal={true}
+      >
+        <Text>Ejemplirijillo</Text>
+      </Modal>
       <Panel />
     </View>
   );

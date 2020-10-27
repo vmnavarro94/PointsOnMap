@@ -1,16 +1,16 @@
 import React from 'react';
 import { Modal, StyleSheet, View, Text } from 'react-native';
 
-export default () => {
+export default ({ children, showModal }) => {
 	return(
 		<Modal
 			animationType='slide'
 			transparent={true}
-			visible={false}
+			visible={showModal}
 		>
 			<View style={styles.center}>
 				<View style={styles.modalView}>
-					<Text>😃</Text>
+					{children}
 				</View>
 			</View>
 		</Modal>
