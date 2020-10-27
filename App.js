@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Dimensions, StyleSheet, Text, View } from 'react-native';
 
-import { Map, Modal } from './components';
+import { Map, Modal, Panel } from './components';
 
 export default function App() {
+  const [puntos, setPuntos] = useState([]);
+
+  const handleLongPress = ({ nativeEvent }) => {
+    setPuntos([...puntos, {coordinate: nativeEvent.coordinate}]);
+  };
+
+  console.log(puntos);
   return (
     <View style={styles.container}>
-      <Map/>
+      <Map longPress={handleLongPress}/>
       <Modal />
+      <Panel />
     </View>
   );
 }
